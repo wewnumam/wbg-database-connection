@@ -4,6 +4,9 @@ let elapsedTime = 0;
 let score = 0;
 
 $(function () {
+    $('#username').hide();
+    $('#submitButton').hide();
+
     // Function to start the timer
     function startTimer() {
         startTime = new Date().getTime();
@@ -24,6 +27,9 @@ $(function () {
 
     $('#stopButton').click(function () {
         clearInterval(timerInterval);
+        
+        $('#username').show();
+        $('#submitButton').show();
     });
 
     $('#addScoreButton').click(function () {
@@ -46,6 +52,7 @@ $(function () {
             success: function (response) {
                 // Handle the server response if needed
                 console.log(record);
+                location.reload();
             },
             error: function (xhr, status, error) {
                 // Handle errors if any

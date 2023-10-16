@@ -2,7 +2,7 @@
     include('system/config.php');
 
     $table_name = 'record';
-    $sql = "SELECT * FROM $table_name";
+    $sql = "SELECT * FROM $table_name ORDER BY score DESC";
     $result = $conn->query($sql);
 
     if (!$result->num_rows > 0) {

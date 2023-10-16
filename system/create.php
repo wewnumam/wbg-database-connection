@@ -14,6 +14,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if ($conn->query($sql) === TRUE) {
         echo "Record created successfully.";
     } else {
+        http_response_code(400);
         echo "Error: " . $sql . "<br>" . $conn->error;
     }
 
